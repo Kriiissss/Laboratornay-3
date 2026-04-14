@@ -20,9 +20,9 @@ cd ml-pipeline-project
 git init
 git remote add origin
 
-Настройка  .gitignore.txt
+Настройка  .gitignore
 git checkout -b develop
-git add .gitignore.txt
-git commit -m "Initial commit with .gitignore.txt and develop branch"
+git add .gitignore
+git commit -m "Initial commit with .gitignore and develop branch"
 git push -u origin develop
 ```
