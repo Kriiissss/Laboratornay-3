@@ -12,3 +12,17 @@ git remote add origin https://github.com/Kriiissss/Laboratornay-3.git
 git push -u origin main
 ```
 
+## 1.2. Создание локального репозитория и настройка Git Flow
+
+```bash
+mkdir ml-pipeline-project
+cd ml-pipeline-project
+git init
+git remote add origin
+
+Настройка  .gitignore.txt
+git checkout -b develop
+git add .gitignore.txt
+git commit -m "Initial commit with .gitignore.txt and develop branch"
+git push -u origin develop
+```
