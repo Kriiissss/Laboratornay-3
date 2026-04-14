@@ -27,8 +27,9 @@ git commit -m "Initial commit with .gitignore and develop branch"
 git push -u origin develop
 ```
 ## 1.3. Создание структуры папок
-Создание директории в корне проекта:
+
 ```bash
+Создание директории в корне проекта:
 mkdir data notebooks src tests models
 
 Пустые файлы-заглушки:
@@ -42,4 +43,17 @@ touch models/model.py
 git add data notebooks src tests models src/__init__.py src/main.py notebooks/exploratory_data_analysis.ipynb tests/test_main.py models/model.py .gitignore
 git commit -m "Add project structure and initial files"
 git push origin develop
+```
+
+## 2. Управление данными (DVC)
+## 2.1. Установка DVC
+
+```bash
+pip install dvc[gdrive]
+```
+
+## 2.2. Инициализация DVC в репозитории
+
+```bash
+pip install dvc[gdrive]
 ```
