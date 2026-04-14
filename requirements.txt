@@ -1,0 +1,12 @@
+# Основные зависимости DVC
+dvc[gdrive]
+
+# Работа с данными и ML
+pandas
+numpy
+scikit-learn
+
+# Инструменты разработки и тестирования
+flake8
+black
+pytest
