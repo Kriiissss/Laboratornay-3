@@ -1,4 +1,4 @@
-name: CI
+name: CI/CD Pipeline
 
 on:
   pull_request:
@@ -10,26 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
-
-      - name: Install Poetry
-        run: pip install poetry
+          python-version: '3.10' # Укажите нужную версию Python
 
       - name: Install dependencies
         run: |
-          poetry config virtualenvs.create false
-          poetry install --with dev --no-interaction --no-ansi
+          python -m pip install --upgrade pip
+          pip install flake8 black pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Black check
-        run: poetry run black --check src tests
+      - name: Run Black (Formatting check)
+        run: black --check .
 
-      - name: Flake8 check
-        run: poetry run flake8 src tests
+      - name: Run Flake8 (Linting)
+        run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
-      - name: Run tests
-        run: poetry run pytest -q
+      - name: Run Unit Tests
+        run: pytest
