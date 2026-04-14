@@ -49,11 +49,45 @@ git push origin develop
 ## 2.1. Установка DVC
 
 ```bash
-pip install dvc[gdrive]
+pip install "dvc[s3]"
 ```
 
 ## 2.2. Инициализация DVC в репозитории
 
 ```bash
-pip install dvc[gdrive]
+python -m dvc init
 ```
+
+## 2.3. Настройка удаленного хранилища
+
+```bash
+python -m dvc remote add -d myremote gdrive:://Laboratornaya_3
+python -m dvc remote list
+```
+
+## 2.4. Добавление датасета под версионный контроль DVC
+
+```bash
+echo "id,value,label\n1,10,A\n2,15,B\n3,12,A" > data/raw_data.csv
+python -m dvc add data/raw_data.csv
+```
+## 2.5. Фиксация изменений DVC в Git
+
+```bash
+git add data/raw_data.csv.dvc .gitignore
+git commit -m "Add raw_data.csv managed by DVC"
+git push origin develop
+```
+
+## 2.7. Загрузка данных в удаленное хранилище
+
+```bash
+python -m dvc push
+```
+
+## 3. Контейнеризация (Docker)
+## 3.1. Создание Dockerfile
+
+```bash
+touch Dockerfile
+
