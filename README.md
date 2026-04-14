@@ -86,8 +86,8 @@ python -m dvc push
 ```
 
 ## 3. Контейнеризация (Docker)
-## 3.1. Создание Dockerfile
 
 ```bash
 touch Dockerfile
+docker build -t my-ml-pipeline-app .
 
