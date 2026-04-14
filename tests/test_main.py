@@ -6,4 +6,3 @@ def test_sum():
 def test_string_lowercase():
     # Проверка, что метод работает правильно
     assert "HELLO".lower() == "hello"
-
