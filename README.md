@@ -91,6 +91,16 @@ python -m dvc push
 touch Dockerfile
 docker build -t my-ml-pipeline-app .
 docker run ml-pipeline-app
+git commit -m "Add Dockerfile, .dockerignore, requirements.txt, and correct DVC config"
+git push origin develop
 ```bash
 
 ## 4. CI/CD
+
+```bash
+mkdir -p .github/workflows/
+touch .github/workflows/ci.yml
+git add .github/workflows/ci.yml
+git commit -m "Add CI workflow file for GitHub Actions"
+git push origin develop
+```
