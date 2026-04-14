@@ -26,3 +26,20 @@ git add .gitignore
 git commit -m "Initial commit with .gitignore and develop branch"
 git push -u origin develop
 ```
+## 1.3. Создание структуры папок
+Создание директории в корне проекта:
+```bash
+mkdir data notebooks src tests models
+
+Пустые файлы-заглушки:
+touch src/__init__.py
+touch src/main.py
+touch notebooks/exploratory_data_analysis.ipynb
+touch tests/test_main.py
+touch models/model.py
+
+Фиксация изменений:
+git add data notebooks src tests models src/__init__.py src/main.py notebooks/exploratory_data_analysis.ipynb tests/test_main.py models/model.py .gitignore
+git commit -m "Add project structure and initial files"
+git push origin develop
+```
