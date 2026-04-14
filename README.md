@@ -90,4 +90,7 @@ python -m dvc push
 ```bash
 touch Dockerfile
 docker build -t my-ml-pipeline-app .
+docker run ml-pipeline-app
+```bash
 
+## 4. CI/CD
